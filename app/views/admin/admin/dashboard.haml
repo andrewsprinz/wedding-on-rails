@@ -5,19 +5,19 @@
   %ul.small-block-grid-4
     %li
       .panel.text-center
-        %h2= Guest.where("invited_to_ceremony = true").count + Guest.where("invited_to_ceremony = true and partner_name IS NOT NULL").count
+        %h2= Guest.where("invited_to_ceremony = true").count + Guest.where("invited_to_ceremony = true and partner_name IS NOT NULL and partner_name != ''").count
         %p= "Invited to ceremony"
     %li
       .panel.text-center
-        %h2= Guest.where("invited_to_ceremony = false").count + Guest.where("invited_to_ceremony = false and partner_name IS NOT NULL").count
+        %h2= Guest.where("invited_to_ceremony = false").count + Guest.where("invited_to_ceremony = false and partner_name IS NOT NULL and partner_name != ''").count
         %p= "Invited to reception only"
     %li
       .panel.text-center
-        %h2= Guest.attending.where("invited_to_ceremony = true").count + Guest.attending.where("invited_to_ceremony = true and partner_name IS NOT NULL").count
+        %h2= Guest.attending.where("invited_to_ceremony = true").count + Guest.attending.where("invited_to_ceremony = true and partner_name IS NOT NULL and partner_name != ''").count
         %p= "Attending ceremony"
     %li
       .panel.text-center
-        %h2= Guest.attending.where("invited_to_ceremony = false").count + Guest.not_attending.where("invited_to_ceremony = false and partner_name IS NOT NULL").count
+        %h2= Guest.attending.where("invited_to_ceremony = false").count + Guest.not_attending.where("invited_to_ceremony = false and partner_name IS NOT NULL and partner_name != ''").count
         %p= "Attending reception only"
 
   %ul.small-block-grid-4
