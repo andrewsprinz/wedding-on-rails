@@ -17,7 +17,7 @@
         %p= "Attending ceremony"
     %li
       .panel.text-center
-        %h2= Guest.not_attending.where("invited_to_ceremony = false").count + Guest.not_attending.where("invited_to_ceremony = false and partner_name IS NOT NULL").count
+        %h2= Guest.attending.where("invited_to_ceremony = false").count + Guest.not_attending.where("invited_to_ceremony = false and partner_name IS NOT NULL").count
         %p= "Attending reception only"
 
   %ul.small-block-grid-4
